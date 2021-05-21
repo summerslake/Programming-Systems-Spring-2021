@@ -1,0 +1,114 @@
+let rec in_list_helper = function(v, list) ->
+    if list = [] then
+        (* v not in list *)
+        false
+    else
+        if v = (List.hd list) then
+            (* if v in list *)
+            true
+        else
+            (* Recursive Call *)
+            in_list_helper(v, (List.tl list));;
+
+let rec first_duplicate = function(list) ->
+    if list == [] then
+        (* If list is eventually empty *)
+        -1000
+    else
+        if in_list_helper((List.hd list), List.tl list) then
+            (* If in list, return value *)
+            (List.hd list)
+        else
+            (* Recursive Call *)
+            first_duplicate(List.tl list);;
+
+(*
+****************TESTS*******************
+# first_duplicate([1;2;3;4;5;6;7;4;5;8;9]);;
+: int = 4
+# first_duplicate([1;2;3;4;5;6;7;4;5;2;9]);;
+: int = 2
+# first_duplicate([1;2;3;4;5;6;7;8;9;10]);;
+: int = -10000
+*)
+
+let rec not_in_list_helper = function(prelist, v, postlist) ->
+    if postlist = [] then
+        (* No repeats found *)
+        -1000
+    else
+        if (List.mem v prelist) || (List.mem v postlist) then
+            (* Repeat found, continue*)
+            not_in_list_helper(v::prelist, (List.hd postlist), (List.tl postlist))
+        else
+            (* Non-repeat, return value *)
+            v;;
+
+let first_nonrepeating = function(list) ->
+    not_in_list_helper([], (List.hd list), (List.tl list));;
+
+(*
+****************TESTS*******************
+# first_nonrepeating([1;2;3;2;7;5;6;1;3]);;
+# first_nonrepeating([1;2;9;3;2;7;5;6;1;3]);;
+# first_nonrepeating([1;2;9;3;2;7;5;6;10;30]);;
+# first_nonrepeating([1;2;9;3;2;7;5;6;1;10;30]);;
+# first_nonrepeating([1;2;9;3;2;7;5;9;6;1;10;30]);;
+# first_nonrepeating([1;2;3;2;7;5;6;1;3]);;
+# first_nonrepeating([1;2;3;4;5;1;2;3;4;5]);;
+# first_nonrepeating([1;2;3;4;5;1;2;3;4;9]);;
+# first_nonrepeating([1;1;1;2;2;2]);;
+*)
+
+(* sumOfTwo function and its helper *)
+
+let rec check_sums_helper = fun(x, y, z, v) ->
+  if x = [] then
+    (* Sum does not exist *)
+    false
+  else
+    if y = [] then 
+        (* Recursive call *)
+        check_sums_helper((List.tl x), z, z , v)
+    else
+        if List.hd(x) + List.hd(y) = v then 
+            (* If sum is in list *)
+            true
+        else 
+            (* Recursive call *)
+            check_sums_helper(x, (List.tl(y)), z, v);;
+
+let sumOfTwo = fun(a, b, v) ->
+    (* Wrapper function *)
+    check_sums_helper(a, b, b, v);;
+
+(*
+****************TESTS*******************
+# sumOfTwo([1;2;3],[10;20;30;40],42);;
+# sumOfTwo([1;2;3],[10;20;30;40],40);;
+# sumOfTwo([1;2;3],[10;20;30;40],41);;
+# sumOfTwo([1;2;3],[10;20;30;40],43);;
+# sumOfTwo([1;2;3],[10;20;30;40],44);;
+# sumOfTwo([1;2;3],[10;20;30;40],11);;
+# sumOfTwo([1;2;3],[10;20;30;40],15);;
+*)
+
+let rec find_subsets_helper = fun(a,b) ->
+    if b = 0 then
+        (* Base Case *) 
+        []
+    else 
+        (* Add subset and recursive call *)
+        (a, b) :: find_subsets_helper((a+1),(b-1));;
+
+let cyk_sublists = fun x ->
+    (* Wrapper function *)
+    find_subsets_helper(1,(x-1));;
+
+(*
+****************TESTS*******************
+# cyk_sublists 4;;
+# cyk_sublists 3;;
+# cyk_sublists 5;;
+# cyk_sublists(6);;
+*)

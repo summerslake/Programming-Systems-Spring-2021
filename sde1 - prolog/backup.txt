@@ -1,0 +1,381 @@
+[1mtrue.[0m
+
+consult('lakes.SDE1.pro').
+
+
+[1mtrue.[0m
+
+parent(P,tom_smith).
+
+
+P = fred_smith ;[1m;[0m
+P = mary_jones .[1m.[0m
+
+parent(tom_smith,C).
+
+
+C = mark_smith ;[1m;[0m
+C = freddy_smith ;[1m;[0m
+C = joe_smith ;[1m;[0m
+C = francis_smith .[1m.[0m
+
+parent(tom_smith,mark_smith).
+
+
+[1mtrue [0m.[1m.[0m
+
+parent(mark_smith,tom_smith).
+
+
+[1;31mfalse.[0m
+
+married(jeremiah_leech,sally_swithers).
+
+
+[1mtrue [0m.[1m.[0m
+
+married(jeremiah_leech,W).
+
+
+W = sally_swithers .[1m.[0m
+
+married(H,sally_swithers).
+
+
+H = jeremiah_leech .[1m.[0m
+
+married(arthur_leech,sally_swithers).
+
+
+[1;31mfalse.[0m
+
+ancestor(A,mark_smith).
+
+
+A = tom_smith ;[1m;[0m
+A = evelyn_harris ;[1m;[0m
+A = fred_smith ;[1m;[0m
+A = mary_jones .[1m.[0m
+
+ancestor(fred_smith,D).
+
+
+D = tom_smith ;[1m;[0m
+D = lisa_smith ;[1m;[0m
+D = jane_smith ;[1m;[0m
+D = john_smith ;[1m;[0m
+D = mark_smith ;[1m;[0m
+D = freddy_smith ;[1m;[0m
+D = joe_smith ;[1m;[0m
+D = francis_smith ;[1m;[0m
+D = martha_smith ;[1m;[0m
+D = frederick_smith ;[1m;[0m
+D = jill_smith ;[1m;[0m
+D = marcus_smith ;[1m;[0m
+D = tim_smith ;[1m;[0m
+D = joe_thompson ;[1m;[0m
+D = catherine_thompson ;[1m;[0m
+D = john_thompson ;[1m;[0m
+D = carrie_thompson ;[1m;[0m
+D = lilly_thompson ;[1m;[0m
+D = richard_thompson ;[1m;[0m
+D = marcus_thompson ;[1m;[0m
+D = mary_louis ;[1m;[0m
+D = jane_louis ;[1m;[0m
+D = katie_louis ;[1m;[0m
+D = timothy_leech ;[1m;[0m
+D = jack_leech ;[1m;[0m
+D = heather_leech ;[1m;[0m
+D = julie_smith ;[1m;[0m
+D = leslie_smith ;[1m;[0m
+D = heather_smith ;[1m;[0m
+D = zach_smith ;[1m;[0m
+[1;31mfalse.[0m
+
+ancestor(edward_thompson,marcus_thompson).
+
+
+[1mtrue [0m.[1m.[0m
+
+ancestor(tom_smith,fred_smith).
+
+
+[1;31mfalse.[0m
+
+descendent(D,albert_harris).
+
+
+D = june_harris ;[1m;[0m
+D = jackie_harrie ;[1m;[0m
+D = leonard_harris ;[1m;[0m
+D = jennifer_harris ;[1m;[0m
+D = karen_harris ;[1m;[0m
+D = kenneth_harris .[1m.[0m
+
+descendent(albert_harris,P).
+
+
+P = robert_harris ;[1m;[0m
+P = julia_swift .[1m.[0m
+
+descendent(marcus_thompson,edward_thompson).
+
+
+[1mtrue [0m.[1m.[0m
+
+descendent(jeremiah_leech,sally_swithers).
+
+
+[1;31mfalse.[0m
+
+common_ancestor(martha_smith,lilly_thompson,A).
+
+
+A = fred_smith .[1m.[0m
+
+common_ancestor(marcus_smith,jack_leech,A).
+
+
+A = fred_smith ;[1m;[0m
+A = mary_jones ;[1m;[0m
+[1;31mfalse.[0m
+
+common_ancestor(jill_smith,joe_smith,tom_smith).
+
+
+[1mtrue [0m.[1m.[0m
+
+common_ancestor(jill_smith,joe_smith,mark_smith).
+
+
+[1;31mfalse.[0m
+
+common_ancestor(martha_smith,lilly_thompson,A).
+
+
+A = fred_smith ;[1m;[0m
+A = mary_jones ;[1m;[0m
+[1;31mfalse.[0m
+
+blood(edward_thompson,marcus_thompson).
+
+
+[1mtrue [0m.[1m.[0m
+
+blood(marcus_thompson,susan_holt).
+
+
+[1mtrue [0m.[1m.[0m
+
+blood(mary_jones,evelyn_harris).
+
+
+[1;31mfalse.[0m
+
+blood(fred_smith,edward_thompson).
+
+
+[1;31mfalse.[0m
+
+blood(fred_smith,B).
+
+
+B = tom_smith ;[1m;[0m
+B = lisa_smith ;[1m;[0m
+B = jane_smith ;[1m;[0m
+B = john_smith ;[1m;[0m
+B = mark_smith ;[1m;[0m
+B = freddy_smith ;[1m;[0m
+B = joe_smith ;[1m;[0m
+B = francis_smith ;[1m;[0m
+B = martha_smith ;[1m;[0m
+B = frederick_smith ;[1m;[0m
+B = jill_smith ;[1m;[0m
+B = marcus_smith ;[1m;[0m
+B = tim_smith ;[1m;[0m
+B = joe_thompson ;[1m;[0m
+B = catherine_thompson ;[1m;[0m
+B = john_thompson ;[1m;[0m
+B = carrie_thompson ;[1m;[0m
+B = lilly_thompson ;[1m;[0m
+B = richard_thompson ;[1m;[0m
+B = marcus_thompson ;[1m;[0m
+B = mary_louis ;[1m;[0m
+B = jane_louis ;[1m;[0m
+B = katie_louis ;[1m;[0m
+B = timothy_leech ;[1m;[0m
+B = jack_leech .[1m.[0m
+
+sibling(martha_smith,frederick_smith).
+
+
+[1mtrue [0m.[1m.[0m
+
+sibling(mark_smith,pam_wilson).
+
+
+[1;31mfalse.[0m
+
+father(fred_smith,tom_smith).
+
+
+[1mtrue [0m.[1m.[0m
+
+father(tom_smith,mark_smith).
+
+
+[1mtrue [0m.[1m.[0m
+
+father(tom_smith,fred_smith).
+
+
+[1;31mfalse.[0m
+
+father(F,mark_smith).
+
+
+F = tom_smith .[1m.[0m
+
+mother(mary_jones,tom_smith).
+
+
+[1mtrue [0m.[1m.[0m
+
+mother(mary_jones,evelyn_harris).
+
+
+[1;31mfalse.[0m
+
+mother(pam_wilson,martha_smith).
+
+
+[1mtrue [0m.[1m.[0m
+
+mother(martha_smith,pam_wilson).
+
+
+[1;31mfalse.[0m
+
+mother(M,martha_smith).
+
+
+M = pam_wilson ;[1m;[0m
+[1;31mfalse.[0m
+
+uncle(mark_smith,N).
+
+
+N = jill_smith ;[1m;[0m
+N = marcus_smith ;[1m;[0m
+N = tim_smith ;[1m;[0m
+[1;31mfalse.[0m
+
+uncle(mark_smith,jill_smith).
+
+
+[1mtrue [0m.[1m.[0m
+
+uncle(U,jill_smith).
+
+
+U = mark_smith .[1m.[0m
+
+uncle(mark_smith,jeremiah_leech).
+
+
+[1;31mfalse.[0m
+
+aunt(lisa_smith,N).
+
+
+N = mark_smith ;[1m;[0m
+N = freddy_smith ;[1m;[0m
+N = joe_smith ;[1m;[0m
+N = francis_smith ;[1m;[0m
+N = julie_smith ;[1m;[0m
+N = leslie_smith ;[1m;[0m
+N = heather_smith ;[1m;[0m
+N = zach_smith ;[1m;[0m
+[1;31mfalse.[0m
+
+aunt(A,mark_smith).
+
+
+A = lisa_smith .[1m.[0m
+
+aunt(lisa_smith,mark_smith).
+
+
+[1mtrue [0m.[1m.[0m
+
+cousin(martha_smith,tim_smith).
+
+
+[1mtrue [0m.[1m.[0m
+
+cousin(frederick_smith,lilly_thompson).
+
+
+[1mtrue [0m.[1m.[0m
+
+cousin(tom_smith,lisa_smith).
+
+
+[1;31mfalse.[0m
+
+cousin(martha_smith,C).
+
+
+C = joe_thompson ;[1m;[0m
+C = catherine_thompson ;[1m;[0m
+C = john_thompson ;[1m;[0m
+C = carrie_thompson ;[1m;[0m
+C = lilly_thompson ;[1m;[0m
+C = richard_thompson ;[1m;[0m
+C = marcus_thompson ;[1m;[0m
+C = mary_louis ;[1m;[0m
+C = jane_louis ;[1m;[0m
+C = katie_louis ;[1m;[0m
+C = timothy_leech ;[1m;[0m
+C = jack_leech ;[1m;[0m
+C = heather_leech ;[1m;[0m
+C = julie_smith ;[1m;[0m
+C = leslie_smith ;[1m;[0m
+C = heather_smith ;[1m;[0m
+C = zach_smith ;[1m;[0m
+C = jill_smith ;[1m;[0m
+C = marcus_smith ;[1m;[0m
+C = tim_smith ;[1m;[0m
+C = june_harris ;[1m;[0m
+C = jackie_harrie ;[1m;[0m
+C = leonard_harris ;[1m;[0m
+C = jennifer_harris ;[1m;[0m
+C = karen_harris ;[1m;[0m
+C = kenneth_harris ;[1m;[0m
+[1;31mfalse.[0m
+
+cousin_type(martha_smith,jill_smith,T,R).
+
+
+T = 1,
+R = 0 .[1m.[0m
+
+cousin_type(martha_smith,lilly_thompson,T,R).
+
+
+T = 2,
+R = 0 .[1m.[0m
+
+cousin_type(mark_smith,lilly_thompson,T,R).
+
+
+T = R, R = 1 .[1m.[0m
+
+cousin_type(tom_smith,lisa_smith,T,R).
+
+
+[1;31mfalse.[0m
+
+noprotocol.
+
+
